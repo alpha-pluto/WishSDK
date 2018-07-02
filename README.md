@@ -46,12 +46,15 @@ WishSDK,managing products,sales for wish.com
       如果用户同意授权，页面将跳转至 redirect_uri?code={authorization_code}。这里的code用于换取access_token ; 若用户禁止授权，则重定向后不会带上code参数
 
       函数定义：
+      
       String GetAuthorizeUrl(string clientId, 
           string redirectUrl, 
           string grantType = "authorization_code",
-          SessionType sessionType = SessionType.Prod)
+          SessionType sessionType = SessionType.Prod);
+          
 
       调用示例 ：
+      
       string proAuthUrl = Wl.Wish.Open.OAuthAPIs.OAuthApi.GetAuthorizeUrl(
         clientId: "58d5c99a2bc5a20f60343036", 
         redirectUrl: @"https://eastmall.vip/WishApi/InstantShop.html", 
@@ -62,7 +65,9 @@ WishSDK,managing products,sales for wish.com
 
   2)	获取AccessToken
     在wish 平台鉴权后，会引导到店铺设置中相应设定的returnUrl并带入code作为参数，此参数为预授权码，有效期5分钟；使用预授权码获取accesstoken 的函数用下
+    
     函数定义：
+    
     OAuthAccessTokenResult GetAccessToken(string clientId, 
       string clientSecret, 
       string preAuthCode,
@@ -70,6 +75,7 @@ WishSDK,managing products,sales for wish.com
       SessionType sessionType = SessionType.Prod);
       
     调用示例：
+    
     var accesstoken= Wl.Wish.Open.OAuthAPIs.OAuthApi.GetAccessToken(
       clientId:client_id,
       clientSecret:client_secret,
