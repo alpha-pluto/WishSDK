@@ -96,7 +96,10 @@ WishSDK,managing products,sales for wish.com
   4)	测试 AccessToken
     获取的access_token 可以用此方法来测试是否正确
     函数定义 ：
+    
     OAuthAccessTokenTestResult TestAccessToken(string accessToken, SessionType sessionType = SessionType.Prod)；
+    
     调用示例：
+    
     Var tokenTest= TestAccessToken(accessToken:access_token,sessionType:SessionType.Sandbox);
 
